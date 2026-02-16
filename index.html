@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário, Meu Amor!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #fff5f7; 
+            font-family: 'Georgia', serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .bg-text {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            font-size: 16px;
+            color: rgba(255, 182, 193, 0.15); 
+            line-height: 1.8;
+            word-wrap: break-word;
+            z-index: -1;
+            pointer-events: none;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.3);
+            max-width: 90%;
+            width: 450px;
+            text-align: center;
+            border: 1px solid #ffffff;
+            backdrop-filter: blur(8px);
+            z-index: 10;
+            margin: 20px auto;
+        }
+
+        h1 {
+            color: #ff9fb2;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #7a6e71;
+            line-height: 1.6;
+            font-size: 1em;
+            text-align: justify;
+            white-space: pre-wrap;
+        }
+
+        .spotify-container {
+            margin-top: 25px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: fixed;
+            color: #ffc0cb;
+            font-size: 20px;
+            user-select: none;
+            pointer-events: none;
+            animation: float 5s linear infinite;
+            z-index: 5;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(110vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-text" id="bgText"></div>
+
+    <div class="card">
+        <h1>Para Minha Princesinha 💖</h1>
+        
+        <p>meu amor, pode não ser muito, mas quero desejar um feliz aniversário para voceeeee!!!!!! Engraçado pensar que é a 2 vez de muitos felizes aniversarios que tenho a falar a ti. Amor, obrigado por ser essa garota tão brilhante, assim como uma mulher que sabe oque fazer. Tu és o meu orgulho e sabes bem disto, é fato e sem duvidas o quanto te amo. Quero te fazer feliz, então fiz isto, é mais uma de minhas milhares de formas de te amar. 
+
+Sorria sempre meu amor, pois quero ver o sorriso e os olhos no qual me apaixonei a primeira vista, sorria e mostre ao mundo o quão majestosa tu és, ou melhor, apenas me deixe ver a sua essência.
+
+Princesinha linda que amo, FELIZ ANIVERSÁRIOOOOOOOOOOO, EU TE AMO!!!!!!!!!!!!!!!🎉🎉🎉🎉🥳🥳🥳🎆🎆🎆🎆</p>
+
+        <div class="spotify-container">
+            <iframe style="border-radius:12px" src="http://googleusercontent.com/spotify.com/7" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </div>
+
+    <script>
+        const bg = document.getElementById('bgText');
+        bg.innerText = "i love you ".repeat(800);
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 400);
+    </script>
+</body>
+</html>
